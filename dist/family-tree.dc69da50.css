@@ -1,0 +1,310 @@
+:root {
+  --tree-node-fill: #8bc34a;
+  --tree-node-stroke: #5d4037;
+  --tree-male-color: #90caf9;
+  --tree-female-color: #f48fb1;
+  --tree-link-color: #795548;
+  --tree-text-color: #212121;
+  --tree-text-secondary: #757575;
+  --tree-boy-child-color: #8bc34a;
+  --tree-girl-child-color: #f8bbd0;
+}
+
+.family-tree-svg {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.node-box {
+  stroke: var(--tree-node-stroke);
+  stroke-width: 2px;
+  fill: var(--tree-node-fill);
+  rx: 5px;
+  ry: 5px;
+}
+
+.male-node {
+  fill: var(--tree-male-color);
+}
+
+.female-node {
+  fill: var(--tree-female-color);
+}
+
+.boy-child-node {
+  fill: var(--tree-boy-child-color);
+}
+
+.girl-child-node {
+  fill: var(--tree-girl-child-color);
+}
+
+.male-silhouette path, .female-silhouette path, .couple-silhouette path {
+  fill: #444;
+  stroke: #212121;
+  stroke-width: .5px;
+}
+
+.link {
+  fill: none;
+  stroke: var(--tree-link-color);
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+.link-marriage {
+  fill: none;
+  stroke: var(--tree-link-color);
+  stroke-width: 3px;
+  stroke-dasharray: 5 5;
+}
+
+.text-content {
+  pointer-events: none;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+.name {
+  fill: var(--tree-text-color);
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.spouse-name {
+  fill: var(--tree-text-color);
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-size: 14px;
+}
+
+.lifespan, .spouse-lifespan {
+  fill: var(--tree-text-secondary);
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-size: 12px;
+}
+
+.native-place {
+  fill: var(--tree-text-secondary);
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.birth-order {
+  fill: var(--tree-text-secondary);
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-size: 11px;
+}
+
+.spouse-divider {
+  stroke: var(--tree-text-secondary);
+  stroke-width: 1px;
+  stroke-dasharray: 2 2;
+}
+
+.arrow-head {
+  fill: var(--tree-link-color);
+}
+
+.node:hover .node-box {
+  stroke-width: 3px;
+  cursor: pointer;
+}
+
+.node text, .node tspan {
+  text-anchor: middle;
+}
+
+@media (width <= 768px) {
+  .name, .spouse-name {
+    font-size: 12px;
+  }
+
+  .lifespan, .spouse-lifespan, .native-place {
+    font-size: 10px;
+  }
+}
+
+:root {
+  --tree-node-fill: #8bc34a;
+  --tree-node-stroke: #5d4037;
+  --tree-link-color: #795548;
+  --tree-male-color: #1565c0;
+  --tree-female-color: #c62828;
+  --tree-text-color: #212121;
+  --tree-spouse-divider: #9e9e9e;
+  --male-color: #90caf9;
+  --female-color: #f48fb1;
+  --tree-branch-color: #795548;
+  --spouse-divider-color: #bdbdbd;
+  --tree-boy-child-color: #8bc34a;
+  --tree-girl-child-color: #f8bbd0;
+}
+
+.family-tree-svg .node rect {
+  fill: var(--tree-node-fill);
+  stroke: var(--tree-node-stroke);
+  stroke-width: 2px;
+  rx: 5;
+  ry: 5;
+}
+
+.family-tree-svg .node-box.boy-child-node {
+  fill: var(--tree-boy-child-color);
+}
+
+.family-tree-svg .node-box.girl-child-node {
+  fill: var(--tree-girl-child-color);
+}
+
+.family-tree-svg .node text {
+  fill: var(--tree-text-color);
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-family: Arial, sans-serif;
+}
+
+.family-tree-svg .name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.family-tree-svg .spouse-name {
+  font-size: 14px;
+}
+
+.family-tree-svg .lifespan, .family-tree-svg .native-place, .family-tree-svg .spouse-lifespan, .family-tree-svg .spouse-native-place, .family-tree-svg .birth-order {
+  fill: var(--tree-text-color);
+  opacity: .8;
+  font-size: 12px;
+}
+
+.family-tree-svg .spouse-divider {
+  stroke: var(--tree-spouse-divider);
+  stroke-width: 1px;
+  stroke-dasharray: 3 3;
+}
+
+.family-tree-svg .link {
+  fill: none;
+  stroke: var(--tree-link-color);
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+.family-tree-svg .link-marriage {
+  stroke-dasharray: 5;
+  stroke: var(--tree-link-color);
+  stroke-width: 3px;
+}
+
+.family-tree-svg .arrow-head {
+  fill: var(--tree-link-color);
+}
+
+.family-tree-svg .gender-indicator-male {
+  fill: var(--male-color);
+}
+
+.family-tree-svg .gender-indicator-female {
+  fill: var(--female-color);
+}
+
+.family-tree-svg .node.selected rect {
+  stroke-width: 3px;
+  stroke: #ff9800;
+}
+
+.family-tree-svg .node:hover rect {
+  filter: brightness(1.1);
+}
+
+.tamil .family-tree-svg text {
+  font-family: Noto Sans Tamil, sans-serif;
+}
+
+.family-tree-svg .photo circle {
+  fill: #fff;
+  stroke: var(--tree-node-stroke);
+  stroke-width: 1px;
+}
+
+.family-tree-svg .photo path {
+  fill: var(--tree-text-color);
+}
+
+.family-tree-svg .node.root rect {
+  stroke: #ff6f00;
+  stroke-width: 3px;
+}
+
+.family-tree-svg .person-dropdown {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  margin-bottom: 20px;
+  padding: 8px 12px;
+  font-size: 16px;
+}
+
+.family-tree-svg .person-dropdown:focus {
+  border-color: #4285f4;
+  outline: none;
+  box-shadow: 0 0 0 2px #4285f44d;
+}
+
+.family-tree-svg .tree-container {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.family-tree-svg .photo-section {
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+  display: flex;
+}
+
+.family-tree-svg .male-silhouette {
+  fill: var(--male-color);
+  stroke: var(--tree-node-stroke);
+  stroke-width: 1px;
+}
+
+.family-tree-svg .female-silhouette {
+  fill: var(--female-color);
+  stroke: var(--tree-node-stroke);
+  stroke-width: 1px;
+}
+
+.family-tree-svg .couple-silhouette {
+  fill: none;
+  stroke: var(--tree-node-stroke);
+  stroke-width: 2px;
+  stroke-linecap: round;
+}
+
+.family-tree-svg .text-content {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  display: flex;
+}
+/*# sourceMappingURL=family-tree.dc69da50.css.map */
