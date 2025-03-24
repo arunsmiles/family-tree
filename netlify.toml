@@ -1,0 +1,11 @@
+[build]
+  publish = "dist"
+  command = "parcel build src/index.html"
+
+[build.environment]
+  NODE_VERSION = "16"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200 
