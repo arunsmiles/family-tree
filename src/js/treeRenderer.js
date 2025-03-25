@@ -181,8 +181,8 @@ class FamilyTreeRenderer {
     }
     
     // Export SVG to file
-    exportSVG() {
-        exportSVG(this.svg, this.nodeWidth, this.nodeHeight);
+    exportSVG(splitIntoPages = false, exportAsPdf = false) {
+        exportSVG(this.svg, this.nodeWidth, this.nodeHeight, splitIntoPages, exportAsPdf);
     }
 }
 
